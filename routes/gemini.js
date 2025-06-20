@@ -1,15 +1,20 @@
 import express from 'express';
-import fetch from 'node-fetch'; // use node-fetch v2 if using CommonJS
+import fetch from 'node-fetch'; 
+import dotenv from "dotenv"; // use node-fetch v2 if using CommonJS
 
 const router = express.Router();
 
-// Replace this with your actual Gemini API key
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+// // Replace this with your actual Gemini API key
+// const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 router.post('/', async (req, res) => {
   const { prompt } = req.body;
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+  //  const apiKey = "AIzaSyDviAJfoOZPhDZrBcfYLKK3JtnfoPIurNA"; // your real key
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+
+
 
   const body = {
     contents: [
